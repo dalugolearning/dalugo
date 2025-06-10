@@ -117,7 +117,12 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(bg.png);
+    background-image: url(bg4.png);
+}
+
+.konten-kontak {
+  height: 80vh;
+  /* background-image: url(bg4.png); */
 }
 
 .footer-logo {
