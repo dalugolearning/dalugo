@@ -268,8 +268,12 @@ footer {
     display: none;
   }
 
-  .logonavbar {
+  .nav-title {
     display: none;
+  }
+
+  .separator {
+    margin: 0;
   }
   
   .nav-links-dekstop {
