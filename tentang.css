@@ -26,6 +26,12 @@ body {
     
 }
 
+.home-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .logonavbar {
   display: flex;
   align-items: center;
