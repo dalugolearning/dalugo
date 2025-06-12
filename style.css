@@ -13,6 +13,8 @@ body {
   line-height: 1.6;
   background-color: #f9f9f9;
   color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar {
@@ -162,7 +164,7 @@ header p {
 
 .program-list {
   display: flex;
-  gap:60px;
+  gap:35px;
   margin-top: 6vh;
 }
 
