@@ -20,6 +20,10 @@
             caret-color: transparent;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         .navbar-container {
             position: fixed;
             width: 100%;
@@ -28,7 +32,6 @@
         nav {
             display: flex;
             width: 100%;
-            justify-content: center;
             align-items: center;
             background-image: url(pictures/bg3.png);
             height: 8vh;
@@ -59,7 +62,7 @@
             font-family: 'oswald', sans-serif;
             font-size: 2em;
             letter-spacing: -2.5px;
-            line-height: 0.7;
+            line-height: 0.8;
             color: white;
             font-weight: bold;
         }
@@ -70,15 +73,8 @@
             font-weight: 500;
             font-size: 1.2em;
             color: #ded6b9;
-            line-height: 0.7;
-            /* letter-spacing: 1.5px; */
-        }
-        
-        .kontenNavbar a{
-            text-decoration: none;
-            color: white;
-            font-family: 'montserrat', sans-serif;
-            font-weight: 800;;
+            line-height: 0.8;
+            letter-spacing: 2px;
         }
         
         .kontenNavbar {
@@ -88,6 +84,13 @@
             align-items: center;
             justify-content: center;
             padding-right: 30px;
+        }
+
+        .kontenNavbar a{
+            text-decoration: none;
+            color: white;
+            font-family: 'montserrat', sans-serif;
+            font-weight: 800;;
         }
 
         .kontenNavbar2 {
@@ -308,7 +311,7 @@
          Dalugo Learning</h1>
       <p>Tempat belajar Bahasa Arab dan ilmu-ilmu Islam <br>dengan metode yang terstruktur, dan AI based learning (coming soon)</p>
     </header>
-    <div class="card">
+    <div class="card" id="services">
 
     </div>
     <script>
