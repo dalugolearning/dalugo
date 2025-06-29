@@ -18,6 +18,7 @@
 
         body {
             caret-color: transparent;
+            overflow-x: hidden;
         }
 
         html {
@@ -26,8 +27,10 @@
 
         /* NAVBAR KONTEN MULAI */
         .navbar-container {
+            display: flex;
             position: fixed;
             width: 100%;
+            z-index: 9999;
         }
 
         nav {
@@ -163,6 +166,20 @@
             justify-content: center;
             flex-direction: column;
             gap: 10px;
+            position: absolute;
+            width: 100%;
+            transform: translateY(100%);
+            visibility: hidden;
+            opacity: 0;
+            left: 0;
+            transition: all 1s ease-in-out;
+            z-index: 9998;
+        }
+
+        #home.active {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
         }
         
         #home h1 {
@@ -188,6 +205,20 @@
             justify-content: center;
             flex-direction: column;
             gap: 10px;
+            position: absolute;
+            width: 100%;
+            transform: translateY(100%);
+            visibility: hidden;
+            opacity: 0;
+            left: 0;
+            transition: all 1s ease-in-out;
+            z-index: 9997;
+        }
+
+        #about.active {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         #about h1 {
@@ -209,7 +240,9 @@
         
         .card {
             height: 80vh;
-            background-image: url(pictures/bg2.png)
+            background-image: url(pictures/bg2.png);
+            position: relative;
+            top: 90vh;
         }
         
         /* TAMPILALN HP MULAI */
@@ -366,7 +399,7 @@
             </div>
         </nav>
     </div>
-    <header id="home">
+    <header id="home" class="active">
     <h1>Selamat Datang di
         <br>
         Dalugo Learning</h1>
@@ -402,10 +435,14 @@
 
         function showHome() {
             console.log (kontenHome);
+            kontenHome.classList.add('active');
+            kontenAbout.classList.remove('active');
         }
 
         function showAbout() {
             console.log (kontenAbout);
+            kontenAbout.classList.add('active');
+            kontenHome.classList.remove('active');
         }
 
         function showContact() {
