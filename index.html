@@ -19,6 +19,8 @@
         body {
             caret-color: transparent;
             overflow-x: hidden;
+            cursor: default;
+            background-color: #152f08;
         }
 
         html {
@@ -168,7 +170,7 @@
             gap: 10px;
             position: absolute;
             width: 100%;
-            transform: translateY(100%);
+            transform: translateY(-100%);
             visibility: hidden;
             opacity: 0;
             left: 0;
@@ -199,7 +201,7 @@
 
         /* BAGIAN TENTANG KAMI MULAI */
         #about {
-            background-image: url(pictures/bg2.png);
+            background-image: url(pictures/bg.png);
             height: 90vh;
             display: flex;
             justify-content: center;
@@ -207,7 +209,7 @@
             gap: 10px;
             position: absolute;
             width: 100%;
-            transform: translateY(100%);
+            transform: translateY(-100%);
             visibility: hidden;
             opacity: 0;
             left: 0;
@@ -236,8 +238,59 @@
             text-align: justify;
             margin-right: 50%;
         }
+
+        .visi-misi {
+            display: flex;
+            opacity: 0;
+            top: 8.8vh;
+            flex-direction: column;
+            height: 80vh;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            background-image: url(pictures/bg2.png);
+            border: #2b4b36 2px solid;
+            border-radius: 50px;
+            width: 98%;
+            left: 1%;
+            gap: 30px;
+            transform: translateX(-100%);
+            visibility: hidden;
+            transition: all 1s ease-in-out;
+            box-shadow: 2px 2px 1000px rgb(255, 255, 255);
+        }
+
+        .visi-misi.active {
+            display: flex;
+            opacity: 1;
+            transform: translateX(0);
+            visibility: visible;
+        }
+
+        .visi-misi h2 {
+            font-family: 'montserrat', sans-serif;
+            font-size: 2rem;
+        }
+
+        .visi p {
+            width: 80%;
+            font-family: 'lexend';
+            font-weight: 100;
+            margin-left: 2%;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .visi, .misi {
+            width: 95%;
+        }
+
+        .misi ul {
+            line-height: 1.7;
+        }
+
         /* BAGIAN TENTANG KAMI SELESAI */
-        
+
         .card {
             height: 80vh;
             background-image: url(pictures/bg2.png);
@@ -356,6 +409,26 @@
                 font-size: 0.8em;
                 margin-right: 20%;
             }
+
+            .visi p {
+                width: 85%;
+                margin-left: 5%;
+            }
+
+            .visi-misi {
+                font-size: 90%;
+                line-height: 1.9;
+            }
+
+            .misi ul {
+                width: 80%;
+
+                text-align: justify;
+            }
+
+            .visi-misi h2 {
+                margin-left: 2%;
+            }
         }
             /* TAMPILAN HP SELESAI */
         @media (min-width: 768px) and (max-width: 1080px) {
@@ -371,6 +444,7 @@
     </style>
 </head>
 <body>
+    <!-- NAVBAR MULAI -->
     <div class="navbar-container">
         <nav>
             <div class="navbarLogo">
@@ -399,6 +473,10 @@
             </div>
         </nav>
     </div>
+    <!-- NAVBAR SELESAI -->
+
+
+     <!-- HOME ABOUT MULAI -->
     <header id="home" class="active">
     <h1>Selamat Datang di
         <br>
@@ -415,9 +493,36 @@
                 <br><br> Selain itu, Dalugo juga mengadakan berbagai dauroh dan webinar yang bertujuan untuk meningkatkan 
                 pemahaman masyarakat umum terhadap Bahasa Arab dan ilmu-ilmu Islam.
             </p>
+            <p style="color: gray; font-style: italic; margin-top: 20px; cursor: pointer; font-family: 'montserrat';" onclick="showVisiMisi()">
+                see Visi Misi
+            </p>
+        </section>
+
+        <div class="visi-misi" id="visiMisi">
+            <div class="visi">
+                <h2>Visi</h2>
+                <p>Visi kami adalah menjadi lembaga pendidikan yang unggul dalam pengajaran Bahasa Arab dan ilmu-ilmu Islam, 
+                    serta menjadi jembatan bagi masyarakat, santri, dan mahasiswa untuk melanjutkan studi ke Timur Tengah, 
+                    LIPIA dan kampus-kampus Islam lainnya.</p>
+            </div>
+            <div class="misi">
+                <h2>Misi</h2>
+                <ul style="font-family: 'lexend'; font-weight: 100; ">
+                    <li>Menyediakan program bimbingan belajar Bahasa Arab dan ilmu-ilmu Islam yang berkualitas.</li>
+                    <li>Mengadakan tryout dan persiapan studi ke Timur Tengah, LIPIA, dan kampus-kampus Islam lainnya.</li>
+                    <li>Menyelenggarakan dauroh dan webinar untuk meningkatkan pemahaman masyarakat terhadap Bahasa Arab dan ilmu-ilmu Islam.</li>
+                    <li>Membangun komunitas yang mendukung pembelajaran Bahasa Arab dan ilmu-ilmu Islam.</li>
+                </ul>
+                <br>
+                <p style="color: gray; font-style: italic; cursor: pointer; font-family: 'montserrat';" onclick="closeVisiMisi()">
+                    see less
+                </p>
+             </div>
         </div>
 
-    </section>
+    <!-- HOME ABOUT SELESAI -->
+
+
     <div class="card" id="services">
 
     </div>
@@ -427,12 +532,15 @@
         let kontenHome = document.getElementById ('home');
         let kontenAbout = document.getElementById ('about');
         let kontenContact = document.getElementById ('contact');
+        let visiMisi = document.getElementById ('visiMisi');
 
+        // FUNCTION HAMBURGER MENU
         function hamburgerClick() {
             hamburgerMenu.classList.toggle ('active');
             kontenNavbar2.classList.toggle ('active');
         }
 
+        // FUNCTION NAVIGATION BAR
         function showHome() {
             console.log (kontenHome);
             kontenHome.classList.add('active');
@@ -447,6 +555,16 @@
 
         function showContact() {
             console.log (kontenContact);
+        }
+
+        // FUNCTION VISI MISI
+        function showVisiMisi() {
+            visiMisi.classList.add ('active')
+            kontenAbout.classList.remove('active');
+        }
+        function closeVisiMisi() {
+            visiMisi.classList.remove('active');
+            kontenAbout.classList.add('active');
         }
     </script>
 </body>
