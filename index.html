@@ -12,6 +12,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'reckoner';
+            src: url(fonts/Reckoner.ttf);
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'reckoner';
+            src: url(fonts/Reckoner_Bold.ttf);
+            font-weight: bold;
+            font-style: normal;
+        }
+        
         * {
             margin: 0;
         }
@@ -398,6 +412,11 @@
 
             #home p {
                 font-size: 0.8em;
+                text-align: justify;
+                margin-right: 10%;
+            }
+            .break {
+                display: none;
             }
 
             #about h1{
@@ -406,7 +425,7 @@
     
             #about p {
                 font-size: 0.8em;
-                margin-right: 20%;
+                margin-right: 10%;
             }
 
             .visi p {
@@ -476,13 +495,13 @@
 
 
      <!-- HOME ABOUT MULAI -->
-    <header id="home" class="active">
+    <header id="home" class="active" onclick="closeHamburger()">
     <h1>Selamat Datang di
         <br>
         Dalugo Learning</h1>
-        <p>Tempat belajar Bahasa Arab dan ilmu-ilmu Islam <br>dengan metode yang terstruktur, dan AI based learning (coming soon)</p>
+        <p>Tempat belajar Bahasa Arab dan ilmu-ilmu Islam <br class="break"> dengan metode yang terstruktur, dan AI based learning (coming soon)</p>
     </header>
-    <section id="about">
+    <section id="about" onclick="closeHamburger()">
         <div>
             <h1>Dalugo Learning</h1>
             <br>
@@ -490,14 +509,14 @@
                 untuk masyarakat umum, santri, maupun mahasiswa yang ingin melanjutkan studi di Timur Tengah,
                 LIPIA serta kampus-kampus Islam lainnya. 
                 <br><br> Selain itu, Dalugo juga mengadakan berbagai dauroh dan webinar yang bertujuan untuk meningkatkan 
-                pemahaman masyarakat umum terhadap Bahasa Arab dan ilmu-ilmu Islam.
+                pemahaman masyarakat umum terhadap Bahasa Arab dan ilmu-ilmu Islam. 
             </p>
-            <p style="color: gray; font-style: italic; margin-top: 20px; cursor: pointer; font-family: 'montserrat';" onclick="showVisiMisi()">
-                see Visi Misi
+            <p style="color: gray; font-style: italic; margin-top: 20px; cursor: pointer; font-family: 'monserrat';" onclick="showVisiMisi()" >
+                klik untuk lihat visi dan misi
             </p>
         </section>
 
-        <div class="visi-misi" id="visiMisi">
+        <div class="visi-misi" id="visiMisi" onclick="closeHamburger()">
             <div class="visi">
                 <h2>Visi</h2>
                 <p>Visi kami adalah menjadi lembaga pendidikan yang unggul dalam pengajaran Bahasa Arab dan ilmu-ilmu Islam, 
@@ -514,7 +533,7 @@
                 </ul>
                 <br>
                 <p style="color: gray; font-style: italic; cursor: pointer; font-family: 'montserrat';" onclick="closeVisiMisi()">
-                    see less
+                    tutup visi dan misi
                 </p>
              </div>
         </div>
@@ -523,7 +542,9 @@
 
 
     <div class="card" id="services">
-
+        <div>
+            
+        </div>
     </div>
     <script>
         let kontenNavbar2 = document.querySelector ('.kontenNavbar2');
@@ -539,17 +560,24 @@
             kontenNavbar2.classList.toggle ('active');
         }
 
+        function closeHamburger() {
+            hamburgerMenu.classList.remove ('active');
+            kontenNavbar2.classList.remove ('active');
+        }
+
         // FUNCTION NAVIGATION BAR
         function showHome() {
-            console.log (kontenHome);
+            closeHamburger()
             kontenHome.classList.add('active');
             kontenAbout.classList.remove('active');
+            visiMisi.classList.remove('active');
         }
 
         function showAbout() {
-            console.log (kontenAbout);
+            closeHamburger()
             kontenAbout.classList.add('active');
             kontenHome.classList.remove('active');
+            visiMisi.classList.remove('active');
         }
 
         function showContact() {
@@ -558,10 +586,12 @@
 
         // FUNCTION VISI MISI
         function showVisiMisi() {
-            visiMisi.classList.add ('active')
+            closeHamburger()
+            visiMisi.classList.add ('active');
             kontenAbout.classList.remove('active');
         }
         function closeVisiMisi() {
+            closeHamburger()
             visiMisi.classList.remove('active');
             kontenAbout.classList.add('active');
         }
