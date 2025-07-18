@@ -90,6 +90,8 @@
             align-items: center;
             justify-content: center;
             padding-right: 30px;
+            position: relative;
+            z-index: 1;
         }
 
         .kontenNavbar li{
@@ -102,7 +104,9 @@
 
         .kontenNavbar a {
             text-decoration: none;
-            color: white;
+            color: white ;
+            position: relative;
+            width: max-content;
         }
 
         .kontenNavbar2 {
@@ -300,42 +304,76 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            gap: 20px;
         }
 
         .card-container {
-            height: 45%;
-            width: 15%;
-            background-color: #152f08;
-            border-radius: 30px;
-            transition: all 1s ease;
+            height: 300px;
+            width: 90%;
+            background-color: #c2bba7;
             display: flex;
-            justify-content: center;
-            align-items: end;
+            flex-direction: column;
+            border-radius: 30px;
+            position: relative;
         }
 
-        .button {
-            opacity: 0;
-            transition: opacity 1s;
-            transition-delay: 0.5s;
-            transform: rotateY(180deg);
-            border-radius: 5px;
-            padding: 3px;
-            background-color: #ded6b9;
+        .card-image {
+            width: 20%;
+            position: absolute;
+            top: -3%;
+            left: 9%;
+            border: #152f08 2px solid;
+            border-radius: 10px;
         }
 
-        .card-container:hover div {
-            opacity: 1;
+        .card-image:nth-child(1) {
+            z-index: 2;
         }
 
-        .button {
-            margin-bottom: 10px;
-            font-family: 'oswald', sans-serif;
+        @keyframes cardSlide {
+            0% {
+                transform: rotate(0deg);
+                z-index: 2;
+            }
+            50% {
+                transform: rotate(40deg);
+                left: 35%;
+                top: -10%;
+                z-index: 2;
+            }
+            55%{
+                z-index: 0;
+            }
+            100% {
+                transform: rotate(10deg);
+                left: 11%;
+                z-index: 0;
+            }
         }
 
-        .card-container:hover {
-            transform: rotateY(180deg);
-            
-            
+        @keyframes cardSlide2 {
+            0% {
+                transform: rotate(0deg);
+                z-index: 2;
+            }
+            50% {
+                transform: rotate(-40deg);
+                left: -17%;
+                top: -10%;
+                z-index: 2;
+            }
+            55% {
+                z-index: 0;
+            }
+            100% {
+                transform: rotate(0deg);
+                left: 9%;
+                z-index: 1;
+            }
+        }
+
+        .card-image:nth-child(2) {
+            z-index: 1;
         }
 
         /* TAMPILALN HP MULAI */
