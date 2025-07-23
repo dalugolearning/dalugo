@@ -304,76 +304,146 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
         }
 
-        .card-container {
-            height: 300px;
-            width: 90%;
-            background-color: #c2bba7;
+        .btn {
+            position: absolute;
+            left: 35%;
+            top: 80%;
+            width: 300px;
+            max-width: 30%;
             display: flex;
-            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background-color: #eee4;
+            font-family: monospace;
+            color: #fff;
+            font-weight: bold;
+            font-size: large;
+            transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn button:hover {
+            background: #eee;
+            color: #555;
+
+        }
+        
+        .card-container {
+            height: 90%;
+            width: 95%;
+            max-width: 300vw;
+            background-image: linear-gradient( 109.6deg,  rgba(61,131,97,1) 11.2%, rgb(10, 57, 48) 91.1% );
+            display: flex;
             border-radius: 30px;
             position: relative;
+            z-index: 0;
         }
 
         .card-image {
-            width: 20%;
+            width: 25%;
             position: absolute;
-            top: -3%;
-            left: 9%;
+            left: 20%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             border: #152f08 2px solid;
             border-radius: 10px;
-        }
-
-        .card-image:nth-child(1) {
             z-index: 2;
         }
 
-        @keyframes cardSlide {
-            0% {
-                transform: rotate(0deg);
-                z-index: 2;
-            }
-            50% {
-                transform: rotate(40deg);
-                left: 35%;
-                top: -10%;
-                z-index: 2;
-            }
-            55%{
-                z-index: 0;
-            }
-            100% {
-                transform: rotate(10deg);
-                left: 11%;
-                z-index: 0;
-            }
-        }
-
-        @keyframes cardSlide2 {
-            0% {
-                transform: rotate(0deg);
-                z-index: 2;
-            }
-            50% {
-                transform: rotate(-40deg);
-                left: -17%;
-                top: -10%;
-                z-index: 2;
-            }
-            55% {
-                z-index: 0;
-            }
-            100% {
-                transform: rotate(0deg);
-                left: 9%;
-                z-index: 1;
-            }
-        }
-
-        .card-image:nth-child(2) {
+        .card-image2 {
+            width: 25%;
+            position: absolute;
+            left: 20%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: #152f08 2px solid;
+            border-radius: 10px;
             z-index: 1;
+        }
+
+        .footer-logo {
+            width: 90px;
+            height: 110px;
+        }
+
+        .footer-title {
+            font-family: oswald, sans-serif;
+            display: flex;
+            margin-left: 20%;
+            gap: 40px;
+}
+
+        .footer-title-logo p {
+            margin-top: -30px;
+            opacity: 75%;
+        }
+
+        footer {
+            background-color: #2b4b36;
+            background-image: url(pictures/bg3.png);
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 0px;
+            position: relative;
+            top: 90vh;
+            height: 30vh;
+            width: 100%;
+            border-top: #c19651 7.5px solid;
+        }
+
+        .footer-address {
+            margin-top: 35px;
+            text-align: justify;
+            font-family: 'lexend', sans-serif;
+            font-weight: 200;
+            opacity: 75%;
+        }
+
+        .footer-separator {
+            width: 60%;
+            height: 1px;
+            background-color: #bed5b7;
+            margin-left: 20%;
+            margin-top: 20px;
+            opacity: 25%;
+        }
+
+        .footer-rights {
+            font-family: 'lexend', cursive;
+            font-size: 1rem;
+            margin-top: 2%;
+            font-weight:100;
+         }
+
+        .whatsapp-icon, .email-icon, .instagram-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #f9f9f9;
+            border-radius: 50%;
+        }
+
+        .footer-kontak {
+            margin-top: -70px;
+        }
+
+        .footer-kontak p{
+            margin-left: 3%;
+        }
+
+        .footer-kontak ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            gap: 18px;
+            margin-top: 20px;
         }
 
         /* TAMPILALN HP MULAI */
@@ -512,6 +582,32 @@
             .visi-misi h2 {
                 margin-left: 2%;
             }
+
+            .footer-title {
+                display: none;
+            }
+
+            footer {
+                height: 19avh;
+            }
+
+            .footer-kontak, .footer-separator, .footer-rights {
+                margin-top: 15%;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .footer-kontak p {
+                margin-left: 5%;
+            }
+
+            .footer-separator {
+                margin-top: 10px;
+            }
+
+            .footer-rights {
+                margin-top: 1.5%;
+            }
         }
             /* TAMPILAN HP SELESAI */
         @media (min-width: 768px) and (max-width: 1080px) {
@@ -598,5 +694,53 @@
             
             .navbarLogo img{
                 display: none;
+            }
+        }
+
+        /* animasi keyframes */
+        @keyframes cardSlide {
+            0% {
+                transform: rotate(0deg);
+                top: 9.45%;
+                left: 7.5%;
+                z-index: 2;
+            }
+            50% {
+                transform: rotate(40deg);
+                top: 9%;
+                left: 40%;
+                z-index: 2;
+            }
+            55%{
+                z-index: 0;
+            }
+            100% {
+                transform: rotate(10deg);
+                top: 9%;
+                left: 10%;
+                z-index: 0;
+            }
+        }
+
+        @keyframes cardSlide2 {
+            0% {
+                transform: rotate(0deg);
+                top: 9.45%;
+                left: 7.5%;
+                z-index: 2;
+            }
+            50% {
+                transform: rotate(-40deg);
+                left: -25%;
+                top: -9%;
+                z-index: 2;
+            }
+            55% {
+                z-index: 0;
+            }
+            100% {
+                transform: rotate(0deg);
+                left: 7.5%;
+                z-index: 1;
             }
         }
