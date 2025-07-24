@@ -69,7 +69,30 @@ function cardSlide2(active = true) {
     }
 }
 
-const carouselItem = document.querySelectorAll('.card-container');
-function nextCarousel() {
-    
+const cardButtonNext = document.getElementById('next');
+const cardButtonPrev = document.getElementById('prev');
+const cardItem = document.querySelector('.card-item');
+const cardItem2 = document.querySelector('.card-item2');
+const cardItem3 = document.querySelector('.card-item3');
+const cardItems = [cardItem, cardItem2, cardItem3];
+const computedStyle1 = getComputedStyle(cardItem);
+const cardIndex1 = computedStyle1.zIndex
+const computedStyle2 = getComputedStyle(cardItem2)
+const cardIndex2 = computedStyle2.zIndex
+const computedStyle3 = getComputedStyle(cardItem3)
+const cardIndex3 = computedStyle3.zIndex
+// console.log(Number(computedStyle.zIndex) + 1);
+console.log(cardIndex1, cardIndex2, cardIndex3)
+
+function cardNext() {
+    cardItems.forEach(card => {
+        let currentIndex = getComputedStyle(card).zIndex;
+        if (currentIndex == cardIndex1) {
+            card.style.zIndex = cardIndex3;
+        } else if (currentIndex == cardIndex2) {
+            card.style.zIndex = cardIndex1;
+        } else if (currentIndex == cardIndex3) {
+            card.style.zIndex = cardIndex2;
+        }
+    });
 }
