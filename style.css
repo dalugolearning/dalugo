@@ -593,13 +593,15 @@
                 margin-left: 2%;
             }
 
-            
-
             .card-image, .card-image2 {
                 width: 60%;
                 left: 50%;
                 top: 20%;
                 transform: translate(-50%, -50%);
+            }
+
+            .btn {
+                left: 40%;
             }
 
             .footer-title {
