@@ -53,17 +53,11 @@ function cardNext(active = true) {
     if (active) {
         cardItems.forEach(card => {
             let currentIndex = getComputedStyle(card).zIndex;
-            if (currentIndex == 10) {
-                card.style.transition = 'all 1.5s ease';
-                card.style.animation = 'none';
-                card.offsetHeight; // buat restart animasi
-                card.style.animation = 'stackCard 1s ease';
-                setTimeout(() => {
-                    card.style.zIndex = Number(currentIndex) - 2;
-                }, 200);
-            } else if (currentIndex == 9) {
+            if (currentIndex === '10') {
+                card.style.zIndex = Number(currentIndex) - 2;
+            } else if (currentIndex === '9') {
                 card.style.zIndex = Number(currentIndex) + 1;
-            } else if (currentIndex == 8) {
+            } else if (currentIndex === '8') {
                 card.style.zIndex = Number(currentIndex) + 1;
             }
         });
@@ -89,13 +83,7 @@ function cardPrev(active = true) {
             } else if (currentIndex === '9') {
                 card.style.zIndex = Number(currentIndex) - 1;
             } else if (currentIndex === '8') {
-                card.style.transition = 'all 1.5s ease';
-                card.style.animation = 'none';
-                card.offsetHeight; // buat restart animasi
-                card.style.animation = 'stackCard2 1s ease';
-                setTimeout(() => {
-                    card.style.zIndex = Number(currentIndex) + 2;
-                }, 500);
+                card.style.zIndex = Number(currentIndex) + 2;
             }
         });
         cardContents.forEach(konten => {
