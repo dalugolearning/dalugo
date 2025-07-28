@@ -64,10 +64,13 @@ function cardNext(active = true) {
         cardContents.forEach(konten => {
                 let kontenIndex = getComputedStyle(konten).zIndex;
                 if (kontenIndex == 10) {
+                    konten.style.opacity = '0'
                     konten.style.zIndex = Number(kontenIndex) - 2;
                 } else if (kontenIndex == 9) {
+                    konten.style.opacity ='1'
                     konten.style.zIndex = Number(kontenIndex) + 1;
                 } else if (kontenIndex == 8) {
+                    konten.style.opacity = '0'
                     konten.style.zIndex = Number(kontenIndex) + 1;
                 }
             });
@@ -91,9 +94,12 @@ function cardPrev(active = true) {
                 console.log(kontenIndex)
                 if (kontenIndex == 10) {
                     konten.style.zIndex = Number(kontenIndex) - 1;
+                    konten.style.opacity = '0'
                 } else if (kontenIndex == 9) {
+                    konten.style.opacity ='0'
                     konten.style.zIndex = Number(kontenIndex) - 1;
                 } else if (kontenIndex == 8) {
+                    konten.style.opacity = '1'
                     konten.style.zIndex = Number(kontenIndex) + 2;
                 }
             });

@@ -435,17 +435,17 @@
         }
 
         .card-content {
-            background-color: #343434;
+            
             z-index: 10;
         }
 
         .card-content2 {
-            background-color: #152f08;
+            opacity: 0;
             z-index: 9;
         }
 
         .card-content3 {
-            background-color: #151d11;
+            opacity: 0;
             z-index: 8;
         }
 
