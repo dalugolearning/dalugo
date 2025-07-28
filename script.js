@@ -43,28 +43,40 @@ const cardButtonPrev = document.getElementById('prev');
 const cardItem = document.querySelector('.card-item');
 const cardItem2 = document.querySelector('.card-item2');
 const cardItem3 = document.querySelector('.card-item3');
-const cardItems = [cardItem, cardItem2, cardItem3];
+let cardItems = [cardItem, cardItem2, cardItem3];
+const cardContent = document.querySelector('.card-content');
+const cardContent2 = document.querySelector('.card-content2');
+const cardContent3 = document.querySelector('.card-content3');
+let cardContents = [cardContent, cardContent2, cardContent3];
 
 function cardNext(active = true) {
     if (active) {
         cardItems.forEach(card => {
             let currentIndex = getComputedStyle(card).zIndex;
-            if (currentIndex === '10') {
+            if (currentIndex == 10) {
                 card.style.transition = 'all 1.5s ease';
                 card.style.animation = 'none';
                 card.offsetHeight; // buat restart animasi
                 card.style.animation = 'stackCard 1s ease';
                 setTimeout(() => {
-                    card.style.zIndex = Number(currentIndex - 2);
+                    card.style.zIndex = Number(currentIndex) - 2;
                 }, 200);
-            } else if (currentIndex === '9') {
-                card.style.transition = 'all 1.5s ease';
-                card.style.zIndex = (Number(currentIndex) + 1);
-            } else if (currentIndex === '8') {
-                card.style.transition = 'all 1.5s ease';
-                card.style.zIndex = (Number(currentIndex) + 1);
+            } else if (currentIndex == 9) {
+                card.style.zIndex = Number(currentIndex) + 1;
+            } else if (currentIndex == 8) {
+                card.style.zIndex = Number(currentIndex) + 1;
             }
         });
+        cardContents.forEach(konten => {
+                let kontenIndex = getComputedStyle(konten).zIndex;
+                if (kontenIndex == 10) {
+                    konten.style.zIndex = Number(kontenIndex) - 2;
+                } else if (kontenIndex == 9) {
+                    konten.style.zIndex = Number(kontenIndex) + 1;
+                } else if (kontenIndex == 8) {
+                    konten.style.zIndex = Number(kontenIndex) + 1;
+                }
+            });
     }
 }
 
@@ -83,9 +95,20 @@ function cardPrev(active = true) {
                 card.style.animation = 'stackCard2 1s ease';
                 setTimeout(() => {
                     card.style.zIndex = Number(currentIndex) + 2;
-                }, 300);
+                }, 500);
             }
         });
+        cardContents.forEach(konten => {
+                let kontenIndex = getComputedStyle(konten).zIndex;
+                console.log(kontenIndex)
+                if (kontenIndex == 10) {
+                    konten.style.zIndex = Number(kontenIndex) - 1;
+                } else if (kontenIndex == 9) {
+                    konten.style.zIndex = Number(kontenIndex) - 1;
+                } else if (kontenIndex == 8) {
+                    konten.style.zIndex = Number(kontenIndex) + 2;
+                }
+            });
     }
 
 }

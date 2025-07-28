@@ -12,8 +12,10 @@
             font-style: normal;
         }
         
-        * {
+        *, html {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
@@ -32,12 +34,13 @@
             display: flex;
             position: fixed;
             width: 100%;
-            z-index: 9999;
+            z-index: 99999;
             
         }
 
         nav {
             display: flex;
+            justify-content: space-between;
             width: 100%;
             align-items: center;
             background-image: url(pictures/bg3.png);
@@ -303,6 +306,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            z-index: 9999;
         }
 
         .btn {
@@ -346,29 +350,27 @@
         }
 
         .card-image {
-            width: 25%;
+            width: 55%;
             position: absolute;
-            left: 20%;
+            left: 25%;
             top: 50%;
             transform: translate(-50%, -50%);
             border: #152f08 2px solid;
             border-radius: 10px;
             z-index: 2;
-            transition: all 1s ease;
         }
 
         .card-image.active {
             animation: cardSlide 1.5s ease;
-            transform: rotate(10deg);
-            top: calc(50% - 220px);
-            left: 10%;
+            transform: rotate(10deg) translate(-50%,-45%);
+            top: 50%;
             z-index: 0;
         }
 
         .card-image2 {
-            width: 25%;
+            width: 55%;
             position: absolute;
-            left: 20%;
+            left: 25%;
             top: 50%;
             transform: translate(-50%, -50%);
             border: #152f08 2px solid;
@@ -378,37 +380,92 @@
 
         .card-image2.active {
             animation: cardSlide2 1.5s ease;
-            transform: rotate(0deg);
-            left: 7.5%;
-            top: calc(50% - 210px);
+            transform: rotate(0deg) translate(-50%, -50%);
+            top: 50%;
             z-index: 1;
         }
 
         .card-item {
             position: absolute;
-            width: 100%;
+            width: 50%;
+            height: 100%;
             top: 50%;
-            left: 50%;
+            left: 30%;
             transform: translate(-50%, -50%);
             z-index: 10;
         }
         
         .card-item2 {
             position: absolute;
-            width: 100%;
+            width: 50%;
+            height: 100%;
             top: 50%;
-            left: 50%;
+            left: 30%;
             transform: translate(-50%, -50%);
             z-index: 9;
         }
         
         .card-item3 {
             position: absolute;
-            width: 100%;
+            width: 50%;
+            height: 100%;
             top: 50%;
-            left: 50%;
+            left: 30%;
             transform: translate(-50%, -50%);
             z-index: 8;
+        }
+
+        .card-content,
+        .card-content2,
+        .card-content3 {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: absolute;
+            top: 50%;
+            left: 70%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            /* background-color: #555; */
+            height: 100%;
+            width: 40%;
+            padding: 10px;
+            justify-content: center;
+        }
+
+        .card-content {
+            background-color: #343434;
+            z-index: 10;
+        }
+
+        .card-content2 {
+            background-color: #152f08;
+            z-index: 9;
+        }
+
+        .card-content3 {
+            background-color: #151d11;
+            z-index: 8;
+        }
+
+        .card-content h3,
+        .card-content2 h3,
+        .card-content3 h3 {
+            font-family: 'oswald';
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: -10%;
+        }
+
+        .card-content p,
+        .card-content2 p,
+        .card-content3 p {
+            font-family: 'lexend';
+            font-weight: 200;
+            letter-spacing: 1px;
+            text-align: justify;
+            line-height: 1.6;
         }
 
         .footer-logo {
@@ -417,7 +474,7 @@
         }
 
         .footer-title {
-            font-family: oswald, sans-serif;
+            font-family: 'oswald', sans-serif;
             display: flex;
             margin-left: 20%;
             gap: 40px;
@@ -487,6 +544,8 @@
             gap: 18px;
             margin-top: 20px;
         }
+
+
 
         /* TAMPILALN HP MULAI */
         @media (max-width : 768px) {
@@ -628,16 +687,60 @@
 
             .card {
                 overflow: hidden;
+                height: 90vh;
+            }
+
+            .card-item, .card-item2, .card-item3 {
+                width: 100%;
+                height: 50%;
+                top: 25%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
 
             .card-image, .card-image2 {
                 width: 60%;
+                top: 50%;
                 left: 50%;
-                top: 20%;
                 transform: translate(-50%, -50%);
             }
 
+            .card-image.active {
+                animation: cardSlideHp 1s ease;
+                transform: rotate(10deg) translate(-50%, -45%);
+            } 
+
+            .card-image2.active {
+                animation: cardSlideHp2 1s ease;
+            }
+
+            .card-content,
+            .card-content2,
+            .card-content3 {
+                height: 50%;
+                width: 100%;
+                top: 75%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 45px;
+                letter-spacing: none;
+            
+            }
+            .card-content h3,
+            .card-content2 h3,
+            .card-content3 h3 {
+                font-size: 30px;
+                margin-top: -30%;
+            }
+
+            .card-content p,
+            .card-content2 p,
+            .card-content3 p {
+                font-size: 11.5px;
+            }
+
             .btn {
+                bottom: 5%;
                 left: 40%;
             }
 
@@ -755,170 +858,167 @@
             }
         }
         
-        @media (min-width: 1080px) and (max-width: 1920px) {
-            nav {
-                display: flex;
-                justify-content: space-between;
-            }
-
-            .kontenNavbar {
-                display: none;
-            }
-            
-            .kontenNavbar2 {
-                display: flex;
-                opacity: 0;
-                justify-content: space-evenly;
-                align-items: center;
-                border-radius: 30px;
-                background-image: url(pictures/bg3.png);
-                padding: 5px;
-                position: absolute;
-                top:115%;
-                right: 3%;
-                transition: all 0.5s ease;
-                transform: scaleX(0);
-                border: 1px solid rgb(0, 0, 0);
-                width: 40%;
-                transform-origin: 100%;
-            }
-
-            .kontenNavbar2.active {
-                opacity: 1;
-                transform: scaleX(1);
-            }
-
-            .kontenNavbar2 li {
-                margin-top: 5px;
-                opacity: 0;
-                transform: translateX(30px);
-                transition: all 0.3s ease;
-            }
-
-            .kontenNavbar2.active li:nth-child(1) {
-                transition-delay: 0.4s;
-                transform: translateX(0);
-                opacity: 1;
-            }
-
-            .kontenNavbar2.active li:nth-child(2) {
-                transition-delay: 0.3s;
-                transform: translateX(0);
-                opacity: 1;
-            }
-
-            .kontenNavbar2.active li:nth-child(3) {
-                transition-delay: 0.2s;
-                transform: translateX(0);
-                opacity: 1;
-            }
-
-            .kontenNavbar2.active li:nth-child(4) {
-                transition-delay: 0.1s;
-                transform: translateX(0);
-                opacity: 1;
-            }
-            
-            .kontenNavbarIcon {
-                width: 30px;
-                height: 30px;
-                cursor: pointer;
-            }
-            
-            .hamburgerMenu {
-                display: block;
-                cursor: pointer;
-                width: 25px;
-                height: 25px;
-                position: relative;
-                right: 20px;
-                transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            }
-
-            .hamburgerMenu.active {
-                transform: rotate(180deg);
-            }
-            
-            .navbarLogo img{
-                display: none;
-            }
-        }
         /* animasi keyframes */
         @keyframes cardSlide {
             0% {
-                transform: rotate(0deg);
-                top: calc(50% - 210px);
-                left: 7.5%;
+                transform: rotate(0deg) translate(-50%, -50%);
                 z-index: 2;
             }
             50% {
-                transform: rotate(40deg);
-                top: calc(50% - 270px);
-                left: 40%;
+                transform: rotate(40deg) translate(-40%, -80%);
+                left: calc(25% + 25%);
                 z-index: 2;
             }
             55%{
                 z-index: 0;
             }
             100% {
-                transform: rotate(10deg);
-                top: calc(50% - 220px);
-                left: 10%;
+                transform: rotate(10deg) translate(-50%, -45%);
                 z-index: 0;
             }
         }
         
         @keyframes cardSlide2 {
             0% {
-                transform: rotate(0deg);
-                top: calc(50% - 210px);
-                left: 7.5%;
+                transform: rotate(0deg) translate(-50%, -50%);
                 z-index: 2;
             }
             50% {
-                transform: rotate(-40deg);
-                left: -25%;
-                top: calc(50% - 270px);
+                transform: rotate(-40deg) translate(-50%, -80%);
+                left: calc(25% - 44%);
                 z-index: 2;
             }
             55% {
                 z-index: 0;
             }
             100% {
-                transform: rotate(0deg);
-                left: 7.5%;
+                transform: rotate(0deg) translate(-50%, -50%);
                 z-index: 1;
             }
         }
+
+        @keyframes cardSlideHp {
+            0% {
+                transform: rotate(0deg) translate(-50%, -50%);
+                z-index: 2;
+            }
+            50% {
+                transform: rotate(40deg) translate(-40%, -70%);
+                left: calc(25% + 55%);
+                z-index: 2;
+            }
+            55%{
+                z-index: 0;
+            }
+            100% {
+                transform: rotate(10deg) translate(-50%, -45%);
+                z-index: 0;
+            }
+        }
+
+        @keyframes cardSlideHp2 {
+            0% {
+                transform: rotate(0deg) translate(-50%, -50%);
+                z-index: 2;
+            }
+            50% {
+                transform: rotate(-40deg) translate(-50%, -80%);
+                left: calc(25% - 20%);
+                z-index: 2;
+            }
+            55% {
+                z-index: 0;
+            }
+            100% {
+                transform: rotate(0deg) translate(-50%, -50%);
+                z-index: 1;
+            }
+        }
+        
                 
         @keyframes stackCard {
             0% {
-                left: 50%;
-                top: 50%;
+                left: 30%;
             }
             50% {
-                left: 75%;
+                left: calc(30% + 30%);
+                z-index: 10;
+            }
+            55% {
+                z-index: 8;
             }
             100% {
-                left: 50%;
-                top: 50% ;
+                left: 30%;
             }
         }
 
         @keyframes stackCard2 {
             0% {
-                left: 50%;
-                top: 50%;
+                left: 30%;
             }
             50% {
-                left: calc(50% - 27%);
-                z-index: 8;
+                left: calc(30% - 30%);
+                z-index: 9;
             }
             55% {
                 z-index: 10;
             }
             100% {
-                left: 50%;
-                top: 50% ;
+                left: 30%;
+            }
+        }
+        @keyframes stackCard {
+            0% {
+                left: 30%;
+            }
+            50% {
+                left: calc(30% + 30%);
+            }
+            100% {
+                left: 30%;
+            }
+        }
+
+        @keyframes stackCard2 {
+            0% {
+                left: 30%;
+            }
+            50% {
+                left: calc(30% - 30%);
+                z-index: 9;
+            }
+            55% {
+                z-index: 10;
+            }
+            100% {
+                left: 30%;
+            }
+        }
+
+        @keyframes stackCardHp {
+            0% {
+                left: 30%;
+            }
+            50% {
+                left: calc(30% + 30%);
+            }
+            100% {
+                left: 30%;
+            }
+        }
+
+        @keyframes stackCardHp2 {
+            0% {
+                left: 30%;
+            }
+            50% {
+                left: calc(30% - 30%);
+                z-index: 9;
+            }
+            55% {
+                z-index: 10;
+            }
+            100% {
+                left: 30%;
             }
         }
