@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dalugo Demo Website</title>
-    <link rel="icon" type="image/png" href="pictures/icon-web.png"/>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&display=swap" rel="stylesheet">
@@ -12,7 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="pictures/icon-web.png"/>
     <link rel="stylesheet" href="style.css"/>
+    <title>Dalugo Demo Website</title>
 </head>
 <body>
     <!-- NAVBAR MULAI -->
@@ -29,13 +29,13 @@
                 <li onclick="showHome()">Home</li>
                 <li onclick="showAbout()">About</li>
                 <li><a href="#services">Services</a></li>
-                <li onclick="showContact()">Contact</li>
+                <li><a href="kontak.html">Contact</a></li>
             </ul>
             <ul class="kontenNavbar2">
                 <li><img src="pictures/home.png" class="kontenNavbarIcon" alt="Home" onclick="showHome()"></li>
                 <li><img src="pictures/about us.png" class="kontenNavbarIcon" alt="About" onclick="showAbout()"></li>
                 <li><a href="#services"><img src="pictures/services.png" class="kontenNavbarIcon" alt="Services"></a></li>
-                <li><img src="pictures/contact us.png" class="kontenNavbarIcon" alt="Contact" onclick="showContact()"></li>
+                <li><a href="kontak.html"><img src="pictures/contact us.png" class="kontenNavbarIcon" alt="Contact"></a></li>
             </ul>
             <div class="hamburgerMenu" id="hamburgerMenu" onclick="toggleHamburger()">
                 <span></span>
@@ -49,10 +49,10 @@
 
      <!-- HOME ABOUT MULAI -->
     <header id="home" class="active">
-    <h1>Selamat Datang di
-        <br>
-        Dalugo Learning</h1>
-        <p>Tempat belajar Bahasa Arab dan ilmu-ilmu Islam <br class="break"> dengan metode yang terstruktur, dan AI based learning (coming soon)</p>
+        <h1>Selamat Datang di
+            <br>
+            Dalugo Learning</h1>
+            <p>Tempat belajar Bahasa Arab dan ilmu-ilmu Islam <br class="break"> dengan metode yang terstruktur, dan AI based learning (coming soon)</p>
     </header>
     <section id="about">
         <div>
@@ -67,7 +67,7 @@
             <p style="color: gray; font-style: italic; margin-top: 20px; cursor: pointer; font-family: 'monserrat';" onclick="showVisiMisi()" >
                 klik untuk lihat visi dan misi
             </p>
-        </section>
+    </section>
 
         <div class="visi-misi" id="visiMisi">
             <div class="visi">
@@ -88,7 +88,7 @@
                 <p style="color: gray; font-style: italic; cursor: pointer; font-family: 'montserrat';" onclick="closeVisiMisi()">
                     tutup visi dan misi
                 </p>
-             </div>
+            </div>
         </div>
 
     <!-- HOME ABOUT SELESAI -->
@@ -103,9 +103,7 @@
             <div class="card-content">
                 <h3>Double Tryout</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
             </div>
             <div class="card-item2">
                 <img src="pictures/kursus arab lanjutan.png" alt="tryout" class="card-image" id="cardImage" onclick="cardSlide()">
@@ -114,21 +112,17 @@
             <div class="card-content2">
                 <h3>Kelas Arab Lanjutan</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                     uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                    <div class="card-item3">
-                        <img src="pictures/kursus arab dasar.png" alt="tryout" class="card-image" id="cardImage" onclick="cardSlide()">
-                        <img src="pictures/kursus arab dasar.png" alt="Tryout" class="card-image2" id="cardImage2" onclick="cardSlide2()">
-                    </div>
-                    <div class="card-content3">
-                        <h3>Kelas Arab Dasar</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                             uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
+                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="card-item3">
+                <img src="pictures/kursus arab dasar.png" alt="tryout" class="card-image" id="cardImage" onclick="cardSlide()">
+                <img src="pictures/kursus arab dasar.png" alt="Tryout" class="card-image2" id="cardImage2" onclick="cardSlide2()">
+            </div>
+                <div class="card-content3">
+                    <h3>Kelas Arab Dasar</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
         </div>
         <div class="btn">
             <button id="prev" onclick="cardPrev()"><</button>
@@ -143,15 +137,14 @@
             <p>DALUGO LEARN</p>
           </div>
           <div class="footer-address">
-            Ds.Pohgading RT01 RW05 <br>Kec.Gembong, Kab.Pati,<br> Jawa Tengah, Indonesia
+            Ds. Pohgading RT01 RW05, Kec. Gembong, Kab. Pati, Jawa Tengah, Indonesia
           </div>
         </div>
         <div class="footer-kontak">
           <p style="font-family: lexend;">Kontak Kami</p>
           <ul>
             <li>
-                <a href="https://wa.me/6289677235983?Assalamu'alaikum,%20Min%20ana%20mau%20tanya-tanya%20
-                        perihal%20dalugo.%20Jazakumullah%20Wa%20Baarakallahufiikum"><img src="pictures/whatsapp.png" alt="WhatsApp Icon" class="whatsapp-icon">
+                <a href="https://wa.me/6289677235983"><img src="pictures/whatsapp.png" alt="WhatsApp Icon" class="whatsapp-icon">
                 </a>
             </li>
             <li>

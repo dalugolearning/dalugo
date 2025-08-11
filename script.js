@@ -22,7 +22,6 @@ function showHome() { showSection(kontenHome); }
 function showAbout() { showSection(kontenAbout); }
 function showVisiMisi() { showSection(visiMisi); }
 function closeVisiMisi() { showSection(kontenAbout); }
-function showContact() { console.log(kontenContact); }
 
 function cardSlide(active = true) {
     cardImage.forEach(img => {
@@ -54,6 +53,10 @@ function cardNext(active = true) {
         cardItems.forEach(card => {
             let currentIndex = getComputedStyle(card).zIndex;
             if (currentIndex === '10') {
+                card.style.animation = 'none'
+                card.offsetHeight;
+                card.style.opacity = '1'
+                card.style.animation = 'stackCard 1s ease-in-out'
                 card.style.zIndex = Number(currentIndex) - 2;
             } else if (currentIndex === '9') {
                 card.style.zIndex = Number(currentIndex) + 1;
@@ -86,12 +89,15 @@ function cardPrev(active = true) {
             } else if (currentIndex === '9') {
                 card.style.zIndex = Number(currentIndex) - 1;
             } else if (currentIndex === '8') {
+                card.style.animation = 'none'
+                card.offsetHeight;
+                card.style.opacity = '1'
+                card.style.animation = 'stackCard2 1s ease-in-out'
                 card.style.zIndex = Number(currentIndex) + 2;
             }
         });
         cardContents.forEach(konten => {
                 let kontenIndex = getComputedStyle(konten).zIndex;
-                console.log(kontenIndex)
                 if (kontenIndex == 10) {
                     konten.style.zIndex = Number(kontenIndex) - 1;
                     konten.style.opacity = '0'

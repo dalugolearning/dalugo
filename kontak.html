@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="pictures/icon-web.png"/>
+    <link rel="stylesheet" href="kontak.css"/>
+    <title>Dalugo Demo Website</title>
+</head>
+<body>
+    <div class="navbar-container">
+        <nav>
+            <div class="navbarLogo">
+                <img src="pictures/PNG.png" alt="Dalugo Logo">
+                <div class="navTitle">
+                    <p class="title1">DALUGO</p>
+                    <p class="title2">Learning</p>
+                </div>
+            </div>
+            <ul class="kontenNavbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">About<a></li>
+                <li><a href="#services">Services</a></li>
+                <li>Contact</li>
+            </ul>
+            <ul class="kontenNavbar2">
+                <li><a href="index.html"><img src="pictures/home.png" class="kontenNavbarIcon" alt="Home"></a></li>
+                <li><a href="index.html"><img src="pictures/about us.png" class="kontenNavbarIcon" alt="About"></a></li>
+                <li><a href="#services"><img src="pictures/services.png" class="kontenNavbarIcon" alt="Services"></a></li>
+                <li><img src="pictures/contact us.png" class="kontenNavbarIcon" alt="Contact" onclick="showContact()"></li>
+            </ul>
+            <div class="hamburgerMenu" id="hamburgerMenu" onclick="toggleHamburger()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </div>
+    <script src="kontak.js"></script>
+</body>
+</html>
